@@ -19,8 +19,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: App test
-      run: |
-        echo "Dummy check python code!!!"
+        run: |
+            echo "Dummy check python code!!!"
+            echo "Working"
 
   build-app:
     runs-on: ubuntu-latest
