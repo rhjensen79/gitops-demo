@@ -44,7 +44,6 @@ jobs:
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
-            type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -62,15 +61,15 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      #- name: Apply control tag to deployment file
-      #  uses: mark-hartmann/update-deployment-action@develop
-      #  with:
-      #    tag: sha-${{ github.sha }} # refs/tags/ gets automatically removed
-      #    name: homer
-      #    deployment: homer.yaml
+      - name: Apply control tag to deployment file
+        uses: mark-hartmann/update-deployment-action@develop
+        with:
+          tag: sha-${{ github.sha }} # refs/tags/ gets automatically removed
+          name: app
+          deployment: ./staging/deployment.yaml
 #
-      #- uses: stefanzweifel/git-auto-commit-action@v4
-      #  with:
-      #    commit_message: Updated deployment file
-      #    file_pattern: "*.yaml"
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated staging deployment file
+          file_pattern: "*.yaml"
   

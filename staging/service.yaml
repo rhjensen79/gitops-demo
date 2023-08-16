@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demoapp-service
+  Namespace: staging
+spec:
+  selector:
+    app: demoapp
+  ports:
+    - port: 5000
+      targetPort: 5000
+  type: LoadBalancer
