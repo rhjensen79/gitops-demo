@@ -1,22 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: demoapp-production
+  name: Argocd-Config
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/rhjensen79/gitops-demo.git
     targetRevision: production
-    path: k8s
+    path: argocd
   destination:
     server: https://kubernetes.default.svc
     namespace: production
   syncPolicy:
     automated:
       selfHeal: true
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: production
