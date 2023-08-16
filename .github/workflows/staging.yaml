@@ -24,6 +24,7 @@ jobs:
             echo "Working"
 
   build-app:
+    needs: test-app
     runs-on: ubuntu-latest
     steps:
       # Get the repositery's code
