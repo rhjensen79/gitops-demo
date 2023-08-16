@@ -79,7 +79,7 @@ jobs:
         with:
           tag: sha-${{ github.sha }} # refs/tags/ gets automatically removed
           name: app
-          deployment: ./staging/deployment.yaml
+          deployment: ./k8s/deployment.yaml
 #
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
