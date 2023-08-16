@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: App test
         run: |
             echo "Dummy check python code!!!"
@@ -29,7 +29,7 @@ jobs:
     steps:
       # Get the repositery's code
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # https://github.com/docker/setup-qemu-action
       - name: Set up QEMU
