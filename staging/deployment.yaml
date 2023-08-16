@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demoapp-deployment
-  Namespace: staging
+  name: demoapp-staging-deployment
+  namespace: staging
+
 spec:
   replicas: 1
   selector:
@@ -12,6 +13,7 @@ spec:
     metadata:
       labels:
         app: demoapp
+
     spec:
       containers:
         - name: demoapp
@@ -25,4 +27,3 @@ spec:
               cpu: 500m
           ports:
             - containerPort: 5000
-
