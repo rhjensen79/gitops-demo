@@ -15,13 +15,14 @@ spec:
     spec:
       containers:
         - name: demoapp
-          image: registry.tanzu.dk/webinars/app:2
+          image: registry.tanzu.dk/webinars/app:sha-8be92437469764ba52e232e5b57d0d0b8f1ca31f
           resources:
             requests:
-              memory: "128Mi"
-              cpu: "100m"
+              memory: 128Mi
+              cpu: 100m
             limits:
-              memory: "512Mi"
-              cpu: "500m"
+              memory: 512Mi
+              cpu: 500m
           ports:
             - containerPort: 5000
+
