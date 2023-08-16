@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: demoapp
-          image: registry.tanzu.dk/webinars/app:sha-a182798e80d8e194bfa4d3a967a32e99367af38a
+          image: registry.tanzu.dk/webinars/app:sha-863466e7cefd98534ae1bf582010328f21dc94b7
           resources:
             requests:
               memory: 128Mi
