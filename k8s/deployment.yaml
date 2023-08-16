@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: demoapp
-          image: registry.tanzu.dk/webinars/app:sha-83117299e10c8b32021e6f1ab7dc50d45d384108
+          image: registry.tanzu.dk/webinars/app:sha-0cd3e049c87bb4671b5791d4d9c4025f5ecb4ce3
           resources:
             requests:
               memory: 128Mi
@@ -24,3 +24,4 @@ spec:
               cpu: 500m
           ports:
             - containerPort: 5000
+
