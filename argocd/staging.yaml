@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demoapp-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rhjensen79/gitops-demo.git
+    targetRevision: staging
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+  syncPolicy:
+    automated:
+      selfHeal: true
