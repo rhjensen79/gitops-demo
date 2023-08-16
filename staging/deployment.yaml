@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: demoapp-staging-deployment
   namespace: staging
-
 spec:
   replicas: 1
   selector:
@@ -13,11 +12,10 @@ spec:
     metadata:
       labels:
         app: demoapp
-
     spec:
       containers:
         - name: demoapp
-          image: registry.tanzu.dk/webinars/app:sha-8be92437469764ba52e232e5b57d0d0b8f1ca31f
+          image: registry.tanzu.dk/webinars/app:sha-2e5de5c086833af876a5297f7613a2f9f52d2029
           resources:
             requests:
               memory: 128Mi
@@ -27,3 +25,4 @@ spec:
               cpu: 500m
           ports:
             - containerPort: 5000
+
